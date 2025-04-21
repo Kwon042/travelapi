@@ -19,6 +19,7 @@ public class ApiController {
 
     @GetMapping("/search")
     public ResponseEntity<List<AttractionResponse>> searchAttractions(@RequestParam String keyword) {
+        // System.out.println(keyword);
         String rawResponse = apiService.searchAttraction(keyword);
         List<AttractionResponse> parsedList = apiService.parseApiResponse(rawResponse);
 

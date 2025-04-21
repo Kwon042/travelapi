@@ -27,14 +27,14 @@ function searchAttraction() {
         .then(response => response.json())
         .then(result => {
             console.log(result);  // 응답 확인을 위한 로그 추가
-            const items = result?.response?.body?.items?.item;
 
-            if (!items || items.length === 0) {
+            // 결과가 빈 배열이 아니라면 마커 표시
+            if (result && Array.isArray(result) && result.length > 0) {
+                displayMarkersOnMap(result);
+            } else {
                 console.error('검색된 관광지가 없습니다.');
                 alert('검색된 관광지가 없습니다.');
-                return;
             }
-            displayMarkersOnMap(items);
         })
         .catch(error => {
             console.error('검색 오류:', error);
@@ -58,5 +58,22 @@ function displayMarkersOnMap(data) {
         });
         marker.setMap(map);
         markers.push(marker);
+
+        // 인포윈도우에 이미지와 제목 표시
+        const infowindowContent = `
+            <div style="padding:10px;">
+                <strong>${item.title}</strong><br>
+                <img src="${item.firstimage}" alt="${item.title}" style="width: 100px; height: 100px;">
+            </div>
+        `;
+
+        const infowindow = new kakao.maps.InfoWindow({
+            content: infowindowContent
+        });
+
+        // 마커 클릭 시 인포윈도우 표시
+        kakao.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map, marker);
+        });
     });
 }
