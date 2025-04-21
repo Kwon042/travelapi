@@ -1,0 +1,63 @@
+/* 📌 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩과 보더를 포함하여 크기 계산 */
+}
+
+/* 📌 헤더 스타일 */
+header {
+    background-color: #5b30a4; /* 보라색 배경 */
+    color: white;
+    padding: 10px 20px; /* 상하 10px, 좌우 20px 패딩 */
+    height: 90px; /* 고정 높이 설정 */
+}
+
+/* 📌 중앙 정렬을 위한 스타일 */
+.header-container {
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 왼쪽과 오른쪽으로 분할 */
+    align-items: center; /* 수직 중앙 정렬 */
+    width: 100%; /* 전체 너비 */
+    height: 100%; /* 전체 헤더 높이로 중앙 정렬 */
+}
+
+/* 좌측 메뉴 스타일 */
+.left-nav {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+/* 우측 메뉴 스타일 */
+.right-nav {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+/* 링크 스타일 */
+.right-nav a {
+    color: white; /* 링크 색상 */
+    margin-left: 15px; /* 링크 간의 간격 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.right-nav a:hover {
+    color: #d6a1e1; /* 마우스 오버 시 연보라색으로 변경 */
+    text-decoration: none; /* 마우스 오버 시 밑줄 제거 */
+}
+
+/* 드롭다운 메뉴 스타일 (필요 시) */
+.dropdown-menu {
+    background-color: #f9f9f9; /* 드롭다운 배경 */
+    border-radius: 5px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #ddd;
+}
+
+/* 추가적인 스타일 (필요 시) */
+.navbar-brand img {
+    width: 80px; /* 로고 이미지 너비 설정 */
+    height: auto; /* 자동 높이 설정 */
+}

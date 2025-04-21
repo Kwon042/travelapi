@@ -1,0 +1,48 @@
+/* 기본 설정 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* 사용자 친화적인 글꼴 */
+    background-color: #f8f9fa; /* 부드러운 배경색 */
+}
+
+/* 랜덤 관광 명소 제목 스타일 */
+h2 {
+    text-align: center; /* 중앙 정렬 */
+    margin: 30px 0; /* 상하 여백 */
+    font-size: 2.5rem; /* 제목 크기 조정 */
+    color: #6a0dad; /* 제목 색상 */
+}
+
+/* 카드 스타일 */
+.card {
+    border: 1px solid #ced4da; /* 카드 테두리 색상 */
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    transition: transform 0.2s; /* 마우스 오버 효과 설정 */
+}
+
+.card:hover {
+    transform: scale(1.05); /* 마우스 오버 시 카드 확대 */
+}
+
+/* 카드 제목 스타일 */
+.card-title {
+    font-weight: bold; /* 제목 두껍게 설정 */
+}
+
+/* 카드 설명 스타일 */
+.card-text {
+    color: #6c757d; /* 일반 텍스트색 설정 */
+}
+
+/* 여백 및 정렬을 위한 클래스 */
+.row {
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+/* 화면 크기에 따라 카드의 너비 조정 */
+@media (max-width: 768px) {
+    .col-md-4 {
+        margin-bottom: 20px; /* 하단 여백 */
+    }
+}
+
